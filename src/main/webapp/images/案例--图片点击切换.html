@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>图片点击切换</title>
+</head>
+<body>
+<img id="wolf" src="wolf.png">
+
+<script>
+    /*
+    *   分析：
+    *      1.获取图片对象
+    *      2.绑定单击事件
+    *      3.每次点击切换图片
+    *            *规则：
+    *                *如果图片是wolf，切换图片为wolf-z11
+    *                *如果图片是wolf-z11，切换图片为wolf
+    *             使用标记flag来完成
+    * */
+    //获取图片对象
+    var wolf = document.getElementById("wolf");
+
+    var flag = false;
+
+    //绑定单击事件
+    wolf.onclick = function (ev) {
+        if (flag){//如果wolf，则切换为wolf-z11
+            wolf.src = "wolf.png";
+            flag = false;
+        }else {//如果wolf-z11，则切换为wolf
+            wolf.src = "wolf-z11.png";
+            flag= true;
+        }
+    }
+</script>
+</body>
+</html>
